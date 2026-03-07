@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HotDesk Rail — Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+
+  <nav class="nav nav--scrolled">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo">
+        <svg class="nav__logo-icon" viewBox="0 0 32 32" fill="none"><rect x="4" y="6" width="24" height="18" rx="4" stroke="currentColor" stroke-width="2.5"/><line x1="10" y1="28" x2="22" y2="28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="8" y1="24" x2="8" y2="28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="24" y1="24" x2="24" y2="28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="11" cy="15" r="2" fill="currentColor"/><circle cx="21" cy="15" r="2" fill="currentColor"/><line x1="4" y1="11" x2="28" y2="11" stroke="currentColor" stroke-width="2"/></svg>
+        <span>HotDesk<strong>Rail</strong></span>
+      </a>
+      <span class="admin-badge">Admin Panel</span>
+    </div>
+  </nav>
+
+  <main class="admin">
+    <div class="container">
+      <header class="admin__header">
+        <h1>Site Configuration</h1>
+        <p>Manage Stripe integration, environment mode, and deployment settings. All values are persisted in your browser's local storage.</p>
+      </header>
+
+      <div class="admin__grid">
+
+        <!-- Stripe Configuration -->
+        <section class="admin__card">
+          <div class="admin__card-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            <h2>Stripe Configuration</h2>
+          </div>
+
+          <div class="admin__field">
+            <label>Stripe Payment Links</label>
+            <p class="admin__hint">Paste the Payment Link URL for each plan. Create these in <a href="https://dashboard.stripe.com/payment-links" target="_blank" rel="noopener">Stripe Dashboard → Payment Links</a>.</p>
+            <div class="admin__price-ids">
+              <div class="admin__input-group">
+                <span class="admin__input-label">Day Pass</span>
+                <input type="url" id="linkDayPass" placeholder="https://buy.stripe.com/…" spellcheck="false">
+              </div>
+              <div class="admin__input-group">
+                <span class="admin__input-label">Explorer</span>
+                <input type="url" id="linkExplorer" placeholder="https://buy.stripe.com/…" spellcheck="false">
+              </div>
+              <div class="admin__input-group">
+                <span class="admin__input-label">First Class</span>
+                <input type="url" id="linkFirstClass" placeholder="https://buy.stripe.com/…" spellcheck="false">
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn--primary" id="saveStripe">Save Stripe Settings</button>
+          <div class="admin__status" id="stripeStatus"></div>
+        </section>
+
+        <!-- Deploy to GitHub -->
+        <section class="admin__card">
+          <div class="admin__card-header">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <h2>Deploy to GitHub Pages</h2>
+          </div>
+
+          <div class="admin__field">
+            <label for="ghToken">GitHub Personal Access Token</label>
+            <div class="admin__input-wrap">
+              <input type="password" id="ghToken" placeholder="ghp_…" spellcheck="false" autocomplete="off">
+              <button type="button" class="admin__reveal-btn" data-target="ghToken" aria-label="Toggle visibility">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+            <p class="admin__hint">Needs <code>repo</code> scope. <a href="https://github.com/settings/tokens/new?scopes=repo&description=HotDesk+Rail+Deploy" target="_blank" rel="noopener">Create one here</a>.</p>
+          </div>
+
+          <div class="admin__field">
+            <label for="ghRepo">Repository</label>
+            <input type="text" id="ghRepo" placeholder="username/hotdesk-rail" spellcheck="false">
+            <p class="admin__hint">Format: <code>owner/repo-name</code>. The repo will be created if it doesn't exist.</p>
+          </div>
+
+          <div class="admin__field">
+            <label for="ghBranch">Branch</label>
+            <input type="text" id="ghBranch" value="gh-pages" spellcheck="false">
+          </div>
+
+          <div class="admin__actions-row">
+            <button type="button" class="btn btn--primary" id="deployBtn">
+              <svg viewBox="0 0 20 20" fill="currentColor" style="width:16px;height:16px"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"/></svg>
+              Deploy Now
+            </button>
+            <button type="button" class="btn btn--outline" id="saveGhBtn">Save Settings</button>
+          </div>
+
+          <div class="admin__deploy-log" id="deployLog"></div>
+        </section>
+
+        <!-- Quick Reference -->
+        <section class="admin__card admin__card--wide">
+          <div class="admin__card-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <h2>How It Works</h2>
+          </div>
+          <div class="admin__reference">
+            <div class="admin__ref-item">
+              <h4>1. Configure Stripe</h4>
+              <p>Paste your Payment Link URLs from the Stripe Dashboard. When a customer clicks a plan button, they are redirected straight to Stripe's hosted checkout — no API keys or server needed.</p>
+            </div>
+            <div class="admin__ref-item">
+              <h4>2. Test &amp; Go Live</h4>
+              <p>Stripe Payment Links can be created in <strong>test mode</strong> or <strong>live mode</strong> directly from your Stripe Dashboard. Use test links while developing, then swap in live links when you're ready.</p>
+            </div>
+            <div class="admin__ref-item">
+              <h4>3. Deploy</h4>
+              <p>Hit "Deploy Now" to push all site files to a GitHub repo and enable GitHub Pages. The site will be live at <code>https://&lt;owner&gt;.github.io/&lt;repo&gt;/</code> within minutes.</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="admin__footer">
+        <a href="index.html" class="btn btn--outline">Back to Site</a>
+        <button type="button" class="btn btn--outline admin__danger" id="clearAll">Clear All Settings</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
