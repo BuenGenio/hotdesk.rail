@@ -40,6 +40,20 @@
   --duration: 0.3s;
 }
 
+[data-theme="dark"] {
+  --clr-bg: #0f172a;
+  --clr-surface: #1e293b;
+  --clr-surface-alt: #334155;
+  --clr-border: #334155;
+  --clr-border-light: #475569;
+  --clr-text: #f8fafc;
+  --clr-text-secondary: #cbd5e1;
+  --clr-text-muted: #94a3b8;
+  --clr-dark: #f8fafc;
+  --clr-dark-surface: #0f172a;
+  --clr-primary-bg: rgba(26, 86, 219, 0.2);
+}
+
 /* ===== Reset ===== */
 *,
 *::before,
@@ -289,6 +303,40 @@ button, input, select, textarea {
   color: #fff;
 }
 .nav--scrolled .lang-btn:hover:not(.active) { color: var(--clr-dark); }
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-left: 6px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all var(--duration) var(--ease);
+}
+.theme-toggle:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+[data-theme="dark"] .theme-toggle,
+.nav--scrolled .theme-toggle {
+  background: var(--clr-surface);
+  color: var(--clr-text-muted);
+}
+[data-theme="dark"] .theme-toggle:hover,
+.nav--scrolled .theme-toggle:hover {
+  color: var(--clr-text);
+  background: var(--clr-surface-alt);
+}
+.theme-icon { display: none; }
+[data-theme="light"] .theme-icon--light,
+[data-theme="dark"] .theme-icon--dark,
+[data-theme="auto"] .theme-icon--auto { display: block; }
+html:not([data-theme]) .theme-icon--light { display: block; }
 
 .nav__toggle {
   display: none;

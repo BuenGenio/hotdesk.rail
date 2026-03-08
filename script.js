@@ -56,6 +56,33 @@
     applyLang(btn.dataset.lang);
   });
 
+  /* ---------- Theme switcher ---------- */
+  const THEMES = ['light', 'dark', 'auto'];
+  const applyTheme = (theme) => {
+    localStorage.setItem('hdr_theme', theme);
+    if (theme === 'auto') {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+      document.documentElement.style.colorScheme = prefersDark ? 'dark' : 'light';
+    } else {
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.style.colorScheme = theme;
+    }
+  };
+  const themeBtn = document.getElementById('themeToggle');
+  if (themeBtn) {
+    let themeIdx = THEMES.indexOf(localStorage.getItem('hdr_theme') || 'light');
+    if (themeIdx < 0) themeIdx = 0;
+    applyTheme(THEMES[themeIdx]);
+    themeBtn.addEventListener('click', () => {
+      themeIdx = (themeIdx + 1) % THEMES.length;
+      applyTheme(THEMES[themeIdx]);
+    });
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if (THEMES[themeIdx] === 'auto') applyTheme('auto');
+    });
+  }
+
   /* ---------- Nav scroll state ---------- */
   const nav = document.getElementById('nav');
   const onScroll = () => {
