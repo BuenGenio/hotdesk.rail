@@ -259,6 +259,9 @@ button, input, select, textarea {
 .nav--scrolled .lang-switcher { background: var(--clr-surface); }
 
 .lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   padding: 4px 10px;
   font-size: 0.6875rem;
   font-weight: 600;
@@ -270,6 +273,12 @@ button, input, select, textarea {
   color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
   transition: all var(--duration) var(--ease);
+}
+.flag {
+  width: 14px;
+  height: 10px;
+  border-radius: 1.5px;
+  flex-shrink: 0;
 }
 .nav--scrolled .lang-btn { color: var(--clr-text-muted); }
 .lang-btn.active {

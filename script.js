@@ -2,13 +2,22 @@
   'use strict';
 
   /* ---------- i18n ---------- */
-  let currentLang = localStorage.getItem('hdr_lang') || 'en';
+  const urlLang = new URLSearchParams(window.location.search).get('lang');
+  let currentLang = (urlLang && I18N[urlLang]) ? urlLang : (localStorage.getItem('hdr_lang') || 'en');
+
+  const setLangURL = (lang) => {
+    const url = new URL(window.location);
+    if (lang === 'en') { url.searchParams.delete('lang'); }
+    else { url.searchParams.set('lang', lang); }
+    history.replaceState(null, '', url);
+  };
 
   const applyLang = (lang) => {
     const t = I18N[lang];
     if (!t) return;
     currentLang = lang;
     localStorage.setItem('hdr_lang', lang);
+    setLangURL(lang);
     document.documentElement.lang = lang === 'uk' ? 'uk' : lang;
 
     document.title = t._meta.title;
@@ -368,5 +377,8 @@
   window.addEventListener('scroll', highlightNav, { passive: true });
 
   if (currentLang !== 'en') applyLang(currentLang);
-  else document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === 'en'));
+  else {
+    setLangURL('en');
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === 'en'));
+  }
 })();
