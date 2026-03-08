@@ -29,11 +29,7 @@
     .ma-summary { background: var(--clr-surface); border-radius: var(--radius); padding: 1.25rem; margin-top: 2rem; }
     .ma-summary table { margin: 0; }
     .ma-note { font-size: 0.8125rem; color: var(--clr-text-muted); margin-top: 2rem; font-style: italic; }
-    .ma-country-switcher { display: flex; gap: 0.25rem; }
-    .ma-country-switcher .country-btn { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.6rem; font-size: 0.75rem; background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: var(--radius); color: var(--clr-text-secondary); cursor: pointer; transition: all 0.2s; }
-    .ma-country-switcher .country-btn:hover { color: var(--clr-text); border-color: var(--clr-text-muted); }
-    .ma-country-switcher .country-btn.active { background: var(--clr-primary); color: #fff; border-color: var(--clr-primary); }
-    .ma-country-switcher .country-btn .flag { width: 14px; height: 10px; border-radius: 1px; }
+    .ma-country-select { padding: 0.35rem 0.6rem; font-size: 0.8125rem; background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: var(--radius); color: var(--clr-text); cursor: pointer; }
   </style>
 </head>
 <body>
@@ -53,11 +49,11 @@
       </a>
       <a href="index.html" class="ma-back" id="maBack"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> <span id="maBackText">Back to site</span></a>
       <div style="flex:1"></div>
-      <div class="country-switcher ma-country-switcher" id="countrySwitcher" title="Data source">
-        <button class="country-btn" data-country="uk"><svg class="flag" viewBox="0 0 20 14"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="2.8"/><path d="M0 0l20 14M20 0L0 14" stroke="#C8102E" stroke-width="1.6"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4.6"/><path d="M10 0v14M0 7h20" stroke="#C8102E" stroke-width="2.8"/></svg>UK</button>
-        <button class="country-btn" data-country="ua"><svg class="flag" viewBox="0 0 20 14"><rect width="20" height="7" fill="#005BBB"/><rect y="7" width="20" height="7" fill="#FFD500"/></svg>UA</button>
-        <button class="country-btn" data-country="es"><svg class="flag" viewBox="0 0 20 14"><rect width="20" height="3.5" fill="#AA151B"/><rect y="3.5" width="20" height="7" fill="#F1BF00"/><rect y="10.5" width="20" height="3.5" fill="#AA151B"/></svg>ES</button>
-      </div>
+      <select class="ma-country-select" id="countrySelect" title="Data source" aria-label="Data source">
+        <option value="uk">UK</option>
+        <option value="ua">Ukraine</option>
+        <option value="es">Spain</option>
+      </select>
       <div class="lang-switcher" id="langSwitcher">
         <button class="lang-btn" data-lang="en"><svg class="flag" viewBox="0 0 20 14"><rect width="20" height="14" fill="#012169"/><path d="M0 0l20 14M20 0L0 14" stroke="#fff" stroke-width="2.8"/><path d="M0 0l20 14M20 0L0 14" stroke="#C8102E" stroke-width="1.6"/><path d="M10 0v14M0 7h20" stroke="#fff" stroke-width="4.6"/><path d="M10 0v14M0 7h20" stroke="#C8102E" stroke-width="2.8"/></svg>EN</button>
         <button class="lang-btn" data-lang="uk"><svg class="flag" viewBox="0 0 20 14"><rect width="20" height="7" fill="#005BBB"/><rect y="7" width="20" height="7" fill="#FFD500"/></svg>UK</button>
@@ -198,11 +194,11 @@
       let currentCountry = (urlCountry && ['uk','ua','es'].includes(urlCountry)) ? urlCountry : (localStorage.getItem('hdr_ma_country') || 'uk');
 
       const t = (key) => {
-        if (typeof MA_DATA !== 'undefined' && MA_DATA[currentCountry] && key in MA_DATA[currentCountry])
-          return MA_DATA[currentCountry][key];
         if (typeof I18N !== 'undefined' && I18N[currentLang] && key in I18N[currentLang])
           return I18N[currentLang][key];
-        return I18N?.en?.[key] || key;
+        if (typeof MA_DATA !== 'undefined' && MA_DATA[currentCountry] && key in MA_DATA[currentCountry])
+          return MA_DATA[currentCountry][key];
+        return I18N?.en?.[key] || MA_DATA?.[currentCountry]?.[key] || key;
       };
 
       const setURL = () => {
@@ -219,7 +215,8 @@
         localStorage.setItem('hdr_ma_country', currentCountry);
         setURL();
         document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === currentLang));
-        document.querySelectorAll('.country-btn').forEach(b => b.classList.toggle('active', b.dataset.country === currentCountry));
+        const countrySelect = document.getElementById('countrySelect');
+        if (countrySelect) countrySelect.value = currentCountry;
         const back = document.getElementById('maBack');
         if (back) back.href = currentLang === 'en' ? 'index.html' : 'index.html?lang=' + currentLang;
         const logo = document.getElementById('maLogo');
@@ -232,7 +229,7 @@
         document.querySelectorAll('[data-i18n]').forEach(el => {
           const key = el.dataset.i18n;
           const val = t(key);
-          if (val && val !== key) el.textContent = val;
+          if (val != null && val !== key) el.textContent = val;
         });
       };
 
@@ -243,9 +240,8 @@
         if (btn && btn.dataset.lang) { currentLang = btn.dataset.lang; activate(); }
       });
 
-      document.getElementById('countrySwitcher').addEventListener('click', (e) => {
-        const btn = e.target.closest('.country-btn');
-        if (btn && btn.dataset.country) { currentCountry = btn.dataset.country; activate(); }
+      document.getElementById('countrySelect').addEventListener('change', (e) => {
+        if (e.target.value) { currentCountry = e.target.value; activate(); }
       });
 
       const THEMES = ['light', 'dark', 'auto'];
