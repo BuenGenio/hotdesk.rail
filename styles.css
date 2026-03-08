@@ -248,6 +248,39 @@ button, input, select, textarea {
 }
 .nav--scrolled .nav__links a:not(.btn):hover { color: var(--clr-primary); }
 
+.lang-switcher {
+  display: flex;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 2px;
+  transition: background var(--duration) var(--ease);
+}
+.nav--scrolled .lang-switcher { background: var(--clr-surface); }
+
+.lang-btn {
+  padding: 4px 10px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  font-family: var(--ff-heading);
+  letter-spacing: 0.04em;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all var(--duration) var(--ease);
+}
+.nav--scrolled .lang-btn { color: var(--clr-text-muted); }
+.lang-btn.active {
+  background: var(--clr-primary);
+  color: #fff;
+}
+.lang-btn:hover:not(.active) {
+  color: #fff;
+}
+.nav--scrolled .lang-btn:hover:not(.active) { color: var(--clr-dark); }
+
 .nav__toggle {
   display: none;
   flex-direction: column;

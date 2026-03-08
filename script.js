@@ -1,6 +1,52 @@
 (() => {
   'use strict';
 
+  /* ---------- i18n ---------- */
+  let currentLang = localStorage.getItem('hdr_lang') || 'en';
+
+  const applyLang = (lang) => {
+    const t = I18N[lang];
+    if (!t) return;
+    currentLang = lang;
+    localStorage.setItem('hdr_lang', lang);
+    document.documentElement.lang = lang === 'uk' ? 'uk' : lang;
+
+    document.title = t._meta.title;
+    document.querySelector('meta[name="description"]').content = t._meta.desc;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[key] === undefined) return;
+      if (el.hasAttribute('data-i18n-html')) {
+        el.innerHTML = t[key];
+      } else if (el.tagName === 'OPTION') {
+        el.textContent = t[key];
+      } else {
+        el.textContent = t[key];
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-list]').forEach(ul => {
+      const key = ul.dataset.i18nList;
+      const items = t[key];
+      if (!items) return;
+      ul.innerHTML = items.map(f => `<li>${f}</li>`).join('');
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+
+    const activeTheme = document.querySelector('.interior-card.active');
+    if (activeTheme) activeTheme.click();
+  };
+
+  document.getElementById('langSwitcher').addEventListener('click', (e) => {
+    const btn = e.target.closest('.lang-btn');
+    if (!btn) return;
+    applyLang(btn.dataset.lang);
+  });
+
   /* ---------- Nav scroll state ---------- */
   const nav = document.getElementById('nav');
   const onScroll = () => {
@@ -154,14 +200,19 @@
         img.src = data.image;
         img.alt = `${data.title} interior preview`;
       }
-      interiorTitle.textContent = data.title;
-      interiorDesc.textContent = data.desc;
-      interiorFeatures.innerHTML = data.features
+      const t = I18N[currentLang] || I18N.en;
+      const localized = (t.themes && t.themes[theme]) || data;
+      interiorTitle.textContent = localized.title;
+      interiorDesc.textContent = localized.desc;
+      interiorFeatures.innerHTML = localized.features
         .map(f => `<li>${f}</li>`)
         .join('');
 
-      const btn = document.querySelector('.interiors__detail-info .btn');
-      if (btn) btn.textContent = `Book a ${data.title} Cabin`;
+      const btn = document.querySelector('#interiorBookBtn');
+      if (btn) {
+        const tmpl = t.theme_book || 'Book a {theme} Cabin';
+        btn.textContent = tmpl.replace('{theme}', localized.title);
+      }
     });
   });
 
@@ -281,10 +332,11 @@
     btn.disabled = true;
 
     setTimeout(() => {
+      const t = I18N[currentLang] || I18N.en;
       form.innerHTML = `
         <div class="form__success active">
-          <h3>Message Sent!</h3>
-          <p>Thanks for reaching out. We'll get back to you within 24 hours.</p>
+          <h3>${t.form_success_h}</h3>
+          <p>${t.form_success_p}</p>
         </div>
       `;
     }, 1200);
@@ -314,4 +366,7 @@
   };
 
   window.addEventListener('scroll', highlightNav, { passive: true });
+
+  if (currentLang !== 'en') applyLang(currentLang);
+  else document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === 'en'));
 })();

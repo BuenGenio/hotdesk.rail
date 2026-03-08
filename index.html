@@ -27,17 +27,22 @@
         </svg>
         <span>HotDesk<strong>Rail</strong></span>
       </a>
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="uk">UK</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+      </div>
       <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#interiors">Interiors</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#locations">Locations</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#contact" class="btn btn--sm btn--primary">Book a Desk</a></li>
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+        <li><a href="#interiors" data-i18n="nav_interiors">Interiors</a></li>
+        <li><a href="#features" data-i18n="nav_features">Features</a></li>
+        <li><a href="#how-it-works" data-i18n="nav_how">How It Works</a></li>
+        <li><a href="#locations" data-i18n="nav_locations">Locations</a></li>
+        <li><a href="#pricing" data-i18n="nav_pricing">Pricing</a></li>
+        <li><a href="#contact" class="btn btn--sm btn--primary" data-i18n="nav_cta">Book a Desk</a></li>
       </ul>
     </div>
   </nav>
@@ -49,29 +54,29 @@
       <div class="hero__overlay"></div>
     </div>
     <div class="container hero__content">
-      <div class="hero__badge">Now in 30+ cities across 5 continents</div>
-      <h1 class="hero__title">Retired Trains.<br>Reimagined&nbsp;Workspaces.</h1>
-      <p class="hero__subtitle">We rescue decommissioned train cabins and refurbish them into stunning 4–10 person workspaces — stationed across cities worldwide. Pick your interior, book a cabin, and get to work.</p>
+      <div class="hero__badge" data-i18n="hero_badge">Now in 30+ cities across 5 continents</div>
+      <h1 class="hero__title" data-i18n="hero_title" data-i18n-html>Retired Trains.<br>Reimagined&nbsp;Workspaces.</h1>
+      <p class="hero__subtitle" data-i18n="hero_sub">We rescue decommissioned train cabins and refurbish them into stunning 4–10 person workspaces — stationed across cities worldwide. Pick your interior, book a cabin, and get to work.</p>
       <div class="hero__actions">
-        <a href="#interiors" class="btn btn--primary btn--lg">Explore Interiors</a>
-        <a href="#how-it-works" class="btn btn--outline btn--lg">How It Works</a>
+        <a href="#interiors" class="btn btn--primary btn--lg" data-i18n="hero_cta1">Explore Interiors</a>
+        <a href="#how-it-works" class="btn btn--outline btn--lg" data-i18n="hero_cta2">How It Works</a>
       </div>
       <div class="hero__stats">
         <div class="hero__stat">
           <span class="hero__stat-value" data-count="34">0</span>
-          <span class="hero__stat-label">Cities</span>
+          <span class="hero__stat-label" data-i18n="stat_cities">Cities</span>
         </div>
         <div class="hero__stat">
           <span class="hero__stat-value" data-count="280">0</span>
-          <span class="hero__stat-label">Cabins</span>
+          <span class="hero__stat-label" data-i18n="stat_cabins">Cabins</span>
         </div>
         <div class="hero__stat">
           <span class="hero__stat-value" data-count="14500">0</span>
-          <span class="hero__stat-label">Members</span>
+          <span class="hero__stat-label" data-i18n="stat_members">Members</span>
         </div>
         <div class="hero__stat">
           <span class="hero__stat-value" data-count="6">0</span>
-          <span class="hero__stat-label">Interior Themes</span>
+          <span class="hero__stat-label" data-i18n="stat_themes">Interior Themes</span>
         </div>
       </div>
     </div>
@@ -81,31 +86,31 @@
   <section class="section about" id="about">
     <div class="container">
       <div class="section__header">
-        <span class="section__tag">The Concept</span>
-        <h2 class="section__title">From End of the Line to Top of Its Game</h2>
-        <p class="section__desc">We partner with rail operators worldwide to rescue decommissioned train cabins, then refurbish them into beautifully designed micro-workspaces for 4–10 people — stationed in parks, plazas, waterfronts, and neighbourhoods across the city.</p>
+        <span class="section__tag" data-i18n="about_tag">The Concept</span>
+        <h2 class="section__title" data-i18n="about_title">From End of the Line to Top of Its Game</h2>
+        <p class="section__desc" data-i18n="about_desc">We partner with rail operators worldwide to rescue decommissioned train cabins, then refurbish them into beautifully designed micro-workspaces for 4–10 people — stationed in parks, plazas, waterfronts, and neighbourhoods across the city.</p>
       </div>
       <div class="about__grid">
         <div class="about__card">
           <div class="about__card-icon">
             <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="12" width="32" height="24" rx="4" stroke="currentColor" stroke-width="2.5"/><line x1="8" y1="20" x2="40" y2="20" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="28" r="2.5" fill="currentColor"/><circle cx="32" cy="28" r="2.5" fill="currentColor"/><line x1="14" y1="36" x2="14" y2="40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="34" y1="36" x2="34" y2="40" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
           </div>
-          <h3>Decommissioned &amp; Refurbished</h3>
-          <p>Retired rail cabins get a second life. We strip them back, reinforce the shell, and rebuild the interior to premium workspace standards — sustainable, unique, and built to last.</p>
+          <h3 data-i18n="about_h1">Decommissioned &amp; Refurbished</h3>
+          <p data-i18n="about_p1">Retired rail cabins get a second life. We strip them back, reinforce the shell, and rebuild the interior to premium workspace standards — sustainable, unique, and built to last.</p>
         </div>
         <div class="about__card">
           <div class="about__card-icon">
             <svg viewBox="0 0 48 48" fill="none"><path d="M14 38V18a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v20" stroke="currentColor" stroke-width="2.5"/><rect x="18" y="22" width="4" height="4" rx="1" fill="currentColor"/><rect x="26" y="22" width="4" height="4" rx="1" fill="currentColor"/><rect x="18" y="30" width="4" height="4" rx="1" fill="currentColor"/><rect x="26" y="30" width="4" height="4" rx="1" fill="currentColor"/><line x1="8" y1="38" x2="40" y2="38" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M20 16V12a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="2"/></svg>
           </div>
-          <h3>4–10 Person Workspaces</h3>
-          <p>Each cabin is an intimate, self-contained workspace — perfect for small teams, freelancers, or focused solo work. Stationed right where you need them, across the city.</p>
+          <h3 data-i18n="about_h2">4–10 Person Workspaces</h3>
+          <p data-i18n="about_p2">Each cabin is an intimate, self-contained workspace — perfect for small teams, freelancers, or focused solo work. Stationed right where you need them, across the city.</p>
         </div>
         <div class="about__card">
           <div class="about__card-icon">
             <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2.5"/><path d="M24 8C30 14 33 19 33 24C33 29 30 34 24 40" stroke="currentColor" stroke-width="2"/><path d="M24 8C18 14 15 19 15 24C15 29 18 34 24 40" stroke="currentColor" stroke-width="2"/><line x1="8" y1="24" x2="40" y2="24" stroke="currentColor" stroke-width="2"/><line x1="10" y1="17" x2="38" y2="17" stroke="currentColor" stroke-width="1.5"/><line x1="10" y1="31" x2="38" y2="31" stroke="currentColor" stroke-width="1.5"/></svg>
           </div>
-          <h3>Global Rail Partnerships</h3>
-          <p>We work with rail operators on every continent to source retired stock — giving new purpose to old carriages and generating revenue for the rail network.</p>
+          <h3 data-i18n="about_h3">Global Rail Partnerships</h3>
+          <p data-i18n="about_p3">We work with rail operators on every continent to source retired stock — giving new purpose to old carriages and generating revenue for the rail network.</p>
         </div>
       </div>
     </div>
@@ -115,46 +120,46 @@
   <section class="section interiors" id="interiors">
     <div class="container">
       <div class="section__header">
-        <span class="section__tag">Choose Your Vibe</span>
-        <h2 class="section__title">Design Your Workspace</h2>
-        <p class="section__desc">Every cabin can be fitted with one of our curated interior themes. Select the atmosphere that fuels your best work.</p>
+        <span class="section__tag" data-i18n="int_tag">Choose Your Vibe</span>
+        <h2 class="section__title" data-i18n="int_title">Design Your Workspace</h2>
+        <p class="section__desc" data-i18n="int_desc">Every cabin can be fitted with one of our curated interior themes. Select the atmosphere that fuels your best work.</p>
       </div>
       <div class="interiors__grid">
         <button class="interior-card active" data-theme="jungle">
           <div class="interior-card__preview">
             <img src="images/jungle.jpg" alt="Jungle interior — lush green train cabin workspace" loading="lazy">
           </div>
-          <h3>Jungle</h3>
+          <h3 data-i18n="int_jungle">Jungle</h3>
         </button>
         <button class="interior-card" data-theme="meadow">
           <div class="interior-card__preview">
             <img src="images/meadow.jpg" alt="Meadow interior — sunlit cabin with wildflower accents" loading="lazy">
           </div>
-          <h3>Meadow</h3>
+          <h3 data-i18n="int_meadow">Meadow</h3>
         </button>
         <button class="interior-card" data-theme="office">
           <div class="interior-card__preview">
             <img src="images/classic-office.jpg" alt="Classic Office interior — professional wood-panelled cabin" loading="lazy">
           </div>
-          <h3>Classic Office</h3>
+          <h3 data-i18n="int_office">Classic Office</h3>
         </button>
         <button class="interior-card" data-theme="bar">
           <div class="interior-card__preview">
             <img src="images/cocktail-bar.jpg" alt="Cocktail Bar interior — moody amber-lit cabin with bar" loading="lazy">
           </div>
-          <h3>Cocktail Bar</h3>
+          <h3 data-i18n="int_bar">Cocktail Bar</h3>
         </button>
         <button class="interior-card" data-theme="library">
           <div class="interior-card__preview">
             <img src="images/library.jpg" alt="Library interior — warm wood cabin with bookshelves" loading="lazy">
           </div>
-          <h3>Library</h3>
+          <h3 data-i18n="int_library">Library</h3>
         </button>
         <button class="interior-card" data-theme="scandi">
           <div class="interior-card__preview">
             <img src="images/scandi-minimal.jpg" alt="Scandi Minimal interior — light birch and white cabin" loading="lazy">
           </div>
-          <h3>Scandi Minimal</h3>
+          <h3 data-i18n="int_scandi">Scandi Minimal</h3>
         </button>
       </div>
       <div class="interiors__detail" id="interiorDetail">
@@ -172,7 +177,7 @@
               <li>Frosted panoramic windows</li>
               <li>Air-purifying biophilic design</li>
             </ul>
-            <a href="#contact" class="btn btn--primary">Book a Jungle Cabin</a>
+            <a href="#contact" class="btn btn--primary" id="interiorBookBtn" data-i18n-template="theme_book">Book a Jungle Cabin</a>
           </div>
         </div>
       </div>
@@ -183,66 +188,66 @@
   <section class="section features" id="features">
     <div class="container">
       <div class="section__header">
-        <span class="section__tag">Amenities</span>
-        <h2 class="section__title">Everything You Need, Nothing You Don't</h2>
-        <p class="section__desc">Every refurbished cabin is purpose-built for deep work and collaboration.</p>
+        <span class="section__tag" data-i18n="feat_tag">Amenities</span>
+        <h2 class="section__title" data-i18n="feat_title">Everything You Need, Nothing You Don't</h2>
+        <p class="section__desc" data-i18n="feat_desc">Every refurbished cabin is purpose-built for deep work and collaboration.</p>
       </div>
       <div class="features__grid">
         <div class="feature">
           <div class="feature__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="currentColor"/></svg>
           </div>
-          <h4>High-Speed Wi-Fi</h4>
-          <p>Dedicated 5G + satellite backhaul keeps you connected at 500 Mbps+ even at full speed.</p>
+          <h4 data-i18n="feat_wifi_h">High-Speed Wi-Fi</h4>
+          <p data-i18n="feat_wifi_p">Dedicated 5G + satellite backhaul keeps you connected at 500 Mbps+ even at full speed.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
-          <h4>27" Monitors</h4>
-          <p>Every desk comes with a high-res external display, USB-C dock, and cable management.</p>
+          <h4 data-i18n="feat_mon_h">27" Monitors</h4>
+          <p data-i18n="feat_mon_p">Every desk comes with a high-res external display, USB-C dock, and cable management.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
           </div>
-          <h4>Quiet Zones</h4>
-          <p>Noise-cancelling partitions and a strict quiet-car policy so you can focus deeply.</p>
+          <h4 data-i18n="feat_quiet_h">Quiet Zones</h4>
+          <p data-i18n="feat_quiet_p">Noise-cancelling partitions and a strict quiet-car policy so you can focus deeply.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h4>Meeting Pods</h4>
-          <p>Bookable 4-person pods with video-call setups for team standups and client calls.</p>
+          <h4 data-i18n="feat_meet_h">Meeting Pods</h4>
+          <p data-i18n="feat_meet_p">Bookable 4-person pods with video-call setups for team standups and client calls.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
           </div>
-          <h4>Barista Coffee</h4>
-          <p>Freshly brewed speciality coffee and tea — included with every membership tier.</p>
+          <h4 data-i18n="feat_coffee_h">Barista Coffee</h4>
+          <p data-i18n="feat_coffee_p">Freshly brewed speciality coffee and tea — included with every membership tier.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
           </div>
-          <h4>Power Everywhere</h4>
-          <p>Every seat has universal sockets plus USB-C PD charging — never run low again.</p>
+          <h4 data-i18n="feat_power_h">Power Everywhere</h4>
+          <p data-i18n="feat_power_p">Every seat has universal sockets plus USB-C PD charging — never run low again.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h4>Secure Lockers</h4>
-          <p>Smart-lock storage for your gear so you can grab lunch without packing up.</p>
+          <h4 data-i18n="feat_lock_h">Secure Lockers</h4>
+          <p data-i18n="feat_lock_p">Smart-lock storage for your gear so you can grab lunch without packing up.</p>
         </div>
         <div class="feature">
           <div class="feature__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
-          <h4>Community App</h4>
-          <p>Book cabins, browse interiors, find locations, and network with members — all in one app.</p>
+          <h4 data-i18n="feat_app_h">Community App</h4>
+          <p data-i18n="feat_app_p">Book cabins, browse interiors, find locations, and network with members — all in one app.</p>
         </div>
       </div>
     </div>
@@ -252,36 +257,36 @@
   <section class="section how-it-works" id="how-it-works">
     <div class="container">
       <div class="section__header">
-        <span class="section__tag">Simple & Seamless</span>
-        <h2 class="section__title">How It Works</h2>
+        <span class="section__tag" data-i18n="how_tag">Simple &amp; Seamless</span>
+        <h2 class="section__title" data-i18n="how_title">How It Works</h2>
       </div>
       <div class="steps">
         <div class="step">
           <div class="step__number">01</div>
           <div class="step__content">
-            <h3>Find a Cabin</h3>
-            <p>Browse cabins near you on our app or website. Filter by city, neighbourhood, capacity, or interior theme.</p>
+            <h3 data-i18n="how_h1">Find a Cabin</h3>
+            <p data-i18n="how_p1">Browse cabins near you on our app or website. Filter by city, neighbourhood, capacity, or interior theme.</p>
           </div>
         </div>
         <div class="step">
           <div class="step__number">02</div>
           <div class="step__content">
-            <h3>Pick Your Interior</h3>
-            <p>Want a Jungle cabin or a Library vibe? Choose the interior theme that matches your mood and working style.</p>
+            <h3 data-i18n="how_h2">Pick Your Interior</h3>
+            <p data-i18n="how_p2">Want a Jungle cabin or a Library vibe? Choose the interior theme that matches your mood and working style.</p>
           </div>
         </div>
         <div class="step">
           <div class="step__number">03</div>
           <div class="step__content">
-            <h3>Tap &amp; Enter</h3>
-            <p>Scan your membership QR at the cabin door, settle into your 4–10 person workspace, and get to work. Everything is ready.</p>
+            <h3 data-i18n="how_h3">Tap &amp; Enter</h3>
+            <p data-i18n="how_p3">Scan your membership QR at the cabin door, settle into your 4–10 person workspace, and get to work. Everything is ready.</p>
           </div>
         </div>
         <div class="step">
           <div class="step__number">04</div>
           <div class="step__content">
-            <h3>Work &amp; Return</h3>
-            <p>Stay for an hour or the whole day. With cabins dotted across the city, there's always one nearby wherever you are.</p>
+            <h3 data-i18n="how_h4">Work &amp; Return</h3>
+            <p data-i18n="how_p4">Stay for an hour or the whole day. With cabins dotted across the city, there's always one nearby wherever you are.</p>
           </div>
         </div>
       </div>
@@ -292,17 +297,17 @@
   <section class="section locations" id="locations">
     <div class="container">
       <div class="section__header">
-        <span class="section__tag">Global Network</span>
-        <h2 class="section__title">Cabins Across the World</h2>
-        <p class="section__desc">Our refurbished train cabins are stationed in parks, plazas, waterfronts, and creative districts in cities across five continents.</p>
+        <span class="section__tag" data-i18n="loc_tag">Global Network</span>
+        <h2 class="section__title" data-i18n="loc_title">Cabins Across the World</h2>
+        <p class="section__desc" data-i18n="loc_desc">Our refurbished train cabins are stationed in parks, plazas, waterfronts, and creative districts in cities across five continents.</p>
       </div>
       <div class="locations__grid">
         <div class="location-card">
           <div class="location-card__region">Europe</div>
           <h3 class="location-card__city">London</h3>
           <div class="location-card__meta">
-            <span>18 cabins</span>
-            <span>4 themes</span>
+            <span>18 <span data-i18n="loc_cabins">cabins</span></span>
+            <span>4 <span data-i18n="loc_themes">themes</span></span>
           </div>
           <p>King's Cross, Southbank, Shoreditch, Canary Wharf</p>
         </div>
@@ -310,8 +315,8 @@
           <div class="location-card__region">Europe</div>
           <h3 class="location-card__city">Amsterdam</h3>
           <div class="location-card__meta">
-            <span>12 cabins</span>
-            <span>3 themes</span>
+            <span>12 <span data-i18n="loc_cabins">cabins</span></span>
+            <span>3 <span data-i18n="loc_themes">themes</span></span>
           </div>
           <p>Vondelpark, NDSM Wharf, Zuidas</p>
         </div>
@@ -319,8 +324,8 @@
           <div class="location-card__region">Europe</div>
           <h3 class="location-card__city">Berlin</h3>
           <div class="location-card__meta">
-            <span>14 cabins</span>
-            <span>5 themes</span>
+            <span>14 <span data-i18n="loc_cabins">cabins</span></span>
+            <span>5 <span data-i18n="loc_themes">themes</span></span>
           </div>
           <p>Kreuzberg, Prenzlauer Berg, Mitte, Tempelhof</p>
         </div>
@@ -328,8 +333,8 @@
           <div class="location-card__region">North America</div>
           <h3 class="location-card__city">New York</h3>
           <div class="location-card__meta">
-            <span>22 cabins</span>
-            <span>6 themes</span>
+            <span>22 <span data-i18n="loc_cabins">cabins</span></span>
+            <span>6 <span data-i18n="loc_themes">themes</span></span>
           </div>
           <p>Brooklyn Bridge Park, Hudson Yards, Dumbo, High Line</p>
         </div>
@@ -337,8 +342,8 @@
           <div class="location-card__region">North America</div>
           <h3 class="location-card__city">Toronto</h3>
           <div class="location-card__meta">
-            <span>10 cabins</span>
-            <span>4 themes</span>
+            <span>10 <span data-i18n="loc_cabins">cabins</span></span>
+            <span>4 <span data-i18n="loc_themes">themes</span></span>
           </div>
           <p>Distillery District, Liberty Village, Harbourfront</p>
         </div>
@@ -346,8 +351,8 @@
           <div class="location-card__region">Asia-Pacific</div>
           <h3 class="location-card__city">Tokyo</h3>
           <div class="location-card__meta">
-            <span>16 cabins</span>
-            <span>5 themes</span>
+            <span>16 <span data-i18n="loc_cabins">cabins</span></span>
+            <span>5 <span data-i18n="loc_themes">themes</span></span>
           </div>
           <p>Shibuya, Shimokitazawa, Nakameguro, Roppongi</p>
         </div>
@@ -355,14 +360,14 @@
           <div class="location-card__region">Asia-Pacific</div>
           <h3 class="location-card__city">Melbourne</h3>
           <div class="location-card__meta">
-            <span>8 cabins</span>
-            <span>3 themes</span>
+            <span>8 <span data-i18n="loc_cabins">cabins</span></span>
+            <span>3 <span data-i18n="loc_themes">themes</span></span>
           </div>
           <p>Southbank, Fitzroy, Federation Square</p>
         </div>
         <div class="location-card location-card--cta">
-          <p>New cities launching every quarter.</p>
-          <a href="#contact" class="btn btn--primary btn--sm">Request a City</a>
+          <p data-i18n="loc_cta_text">New cities launching every quarter.</p>
+          <a href="#contact" class="btn btn--primary btn--sm" data-i18n="loc_cta_btn">Request a City</a>
         </div>
       </div>
     </div>
@@ -372,12 +377,12 @@
   <section class="section pricing" id="pricing">
     <div class="container">
       <div class="section__header">
-        <span class="section__tag">Simple Pricing</span>
-        <h2 class="section__title">Plans That Move With You</h2>
-        <p class="section__desc">No hidden fees. Cancel anytime. All plans include Wi-Fi, coffee, and power.</p>
+        <span class="section__tag" data-i18n="price_tag">Simple Pricing</span>
+        <h2 class="section__title" data-i18n="price_title">Plans That Move With You</h2>
+        <p class="section__desc" data-i18n="price_desc">No hidden fees. Cancel anytime. All plans include Wi-Fi, coffee, and power.</p>
       </div>
       <div class="pricing__country" id="countrySwitcher">
-        <label for="countrySelect">Your region:</label>
+        <label for="countrySelect" data-i18n="price_region">Your region:</label>
         <div class="pricing__country-select">
           <select id="countrySelect">
             <option value="us" data-symbol="$" data-currency="usd" selected>United States ($)</option>
@@ -393,33 +398,33 @@
       <div class="pricing__grid">
         <div class="pricing-card" data-plan="day-pass" data-prices='{"us":25,"gb":20,"eu":23,"jp":3800,"au":38,"ca":34}'>
           <div class="pricing-card__header">
-            <h3>Day Pass</h3>
-            <p>Try us out</p>
+            <h3 data-i18n="price_day_h">Day Pass</h3>
+            <p data-i18n="price_day_sub">Try us out</p>
           </div>
           <div class="pricing-card__price">
             <span class="pricing-card__amount">$25</span>
-            <span class="pricing-card__period">/day</span>
+            <span class="pricing-card__period" data-i18n="price_day_per">/day</span>
           </div>
-          <ul class="pricing-card__features">
+          <ul class="pricing-card__features" data-i18n-list="price_f_day">
             <li>Any cabin, any city</li>
             <li>Hot-desk seating</li>
             <li>High-speed Wi-Fi</li>
             <li>Unlimited coffee &amp; tea</li>
             <li>Community app access</li>
           </ul>
-          <button type="button" class="btn btn--outline btn--block js-checkout" data-plan="day-pass">Get Day Pass</button>
+          <button type="button" class="btn btn--outline btn--block js-checkout" data-plan="day-pass" data-i18n="price_day_btn">Get Day Pass</button>
         </div>
         <div class="pricing-card pricing-card--featured" data-plan="explorer" data-prices='{"us":199,"gb":159,"eu":179,"jp":29800,"au":299,"ca":269}'>
-          <div class="pricing-card__badge">Most Popular</div>
+          <div class="pricing-card__badge" data-i18n="price_exp_badge">Most Popular</div>
           <div class="pricing-card__header">
-            <h3>Explorer</h3>
-            <p>For regulars</p>
+            <h3 data-i18n="price_exp_h">Explorer</h3>
+            <p data-i18n="price_exp_sub">For regulars</p>
           </div>
           <div class="pricing-card__price">
             <span class="pricing-card__amount">$199</span>
-            <span class="pricing-card__period">/month</span>
+            <span class="pricing-card__period" data-i18n="price_exp_per">/month</span>
           </div>
-          <ul class="pricing-card__features">
+          <ul class="pricing-card__features" data-i18n-list="price_f_exp">
             <li>All cabins worldwide</li>
             <li>Choose any interior theme</li>
             <li>Hot-desk seating</li>
@@ -427,18 +432,18 @@
             <li>Priority booking</li>
             <li>Community events</li>
           </ul>
-          <button type="button" class="btn btn--primary btn--block js-checkout" data-plan="explorer">Start Explorer</button>
+          <button type="button" class="btn btn--primary btn--block js-checkout" data-plan="explorer" data-i18n="price_exp_btn">Start Explorer</button>
         </div>
         <div class="pricing-card" data-plan="first-class" data-prices='{"us":399,"gb":319,"eu":359,"jp":59800,"au":599,"ca":539}'>
           <div class="pricing-card__header">
-            <h3>First Class</h3>
-            <p>Dedicated &amp; premium</p>
+            <h3 data-i18n="price_fc_h">First Class</h3>
+            <p data-i18n="price_fc_sub">Dedicated &amp; premium</p>
           </div>
           <div class="pricing-card__price">
             <span class="pricing-card__amount">$399</span>
-            <span class="pricing-card__period">/month</span>
+            <span class="pricing-card__period" data-i18n="price_fc_per">/month</span>
           </div>
-          <ul class="pricing-card__features">
+          <ul class="pricing-card__features" data-i18n-list="price_f_fc">
             <li>Everything in Explorer</li>
             <li>Dedicated desk in home cabin</li>
             <li>Unlimited pod hours</li>
@@ -446,12 +451,12 @@
             <li>Guest passes (2/mo)</li>
             <li>27" monitor at your desk</li>
           </ul>
-          <button type="button" class="btn btn--outline btn--block js-checkout" data-plan="first-class">Go First Class</button>
+          <button type="button" class="btn btn--outline btn--block js-checkout" data-plan="first-class" data-i18n="price_fc_btn">Go First Class</button>
         </div>
       </div>
       <p class="pricing__stripe-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px;vertical-align:middle;margin-right:4px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Payments secured by <strong>Stripe</strong>
+        <span data-i18n="price_stripe">Payments secured by</span> <strong>Stripe</strong>
       </p>
     </div>
   </section>
@@ -460,9 +465,9 @@
   <section class="section partners" id="partners">
     <div class="container">
       <div class="section__header">
-        <span class="section__tag">Our Rail Partners</span>
-        <h2 class="section__title">Sourced from the World's Railways</h2>
-        <p class="section__desc">We partner with rail operators globally to source decommissioned rolling stock — giving retired cabins a new life as premium workspaces.</p>
+        <span class="section__tag" data-i18n="part_tag">Our Rail Partners</span>
+        <h2 class="section__title" data-i18n="part_title">Sourced from the World's Railways</h2>
+        <p class="section__desc" data-i18n="part_desc">We partner with rail operators globally to source decommissioned rolling stock — giving retired cabins a new life as premium workspaces.</p>
       </div>
       <div class="partners__logos">
         <div class="partner-logo">Deutsche<br>Bahn</div>
@@ -473,9 +478,9 @@
         <div class="partner-logo">Network<br>Rail (UK)</div>
       </div>
       <div class="partners__cta">
-        <h3>Are you a rail operator?</h3>
-        <p>We're always looking for new partnerships to expand our cabin network. Let's talk about turning your decommissioned stock into revenue-generating workspaces.</p>
-        <a href="#contact" class="btn btn--outline">Partner With Us</a>
+        <h3 data-i18n="part_cta_h">Are you a rail operator?</h3>
+        <p data-i18n="part_cta_p">We're always looking for new partnerships to expand our cabin network. Let's talk about turning your decommissioned stock into revenue-generating workspaces.</p>
+        <a href="#contact" class="btn btn--outline" data-i18n="part_cta_btn">Partner With Us</a>
       </div>
     </div>
   </section>
@@ -484,29 +489,29 @@
   <section class="section testimonials">
     <div class="container">
       <div class="section__header">
-        <span class="section__tag">Member Stories</span>
-        <h2 class="section__title">What Our Members Say</h2>
+        <span class="section__tag" data-i18n="test_tag">Member Stories</span>
+        <h2 class="section__title" data-i18n="test_title">What Our Members Say</h2>
       </div>
       <div class="testimonials__grid">
         <blockquote class="testimonial">
-          <p>"Our team of six works from the Jungle cabin in Brooklyn Bridge Park. It's the most inspiring office I've ever had — and we get to watch the ferries go by."</p>
+          <p data-i18n="test_1">"Our team of six works from the Jungle cabin in Brooklyn Bridge Park. It's the most inspiring office I've ever had — and we get to watch the ferries go by."</p>
           <footer>
-            <strong>Marcus T.</strong>
-            <span>Startup Founder, New York</span>
+            <strong data-i18n="test_1_name">Marcus T.</strong>
+            <span data-i18n="test_1_role">Startup Founder, New York</span>
           </footer>
         </blockquote>
         <blockquote class="testimonial">
-          <p>"I chose the Library interior in our Amsterdam cabin. Surrounded by bookshelves in a restored Dutch rail carriage — there's nothing like it for deep focus."</p>
+          <p data-i18n="test_2">"I chose the Library interior in our Amsterdam cabin. Surrounded by bookshelves in a restored Dutch rail carriage — there's nothing like it for deep focus."</p>
           <footer>
-            <strong>Lena V.</strong>
-            <span>Freelance Writer, Amsterdam</span>
+            <strong data-i18n="test_2_name">Lena V.</strong>
+            <span data-i18n="test_2_role">Freelance Writer, Amsterdam</span>
           </footer>
         </blockquote>
         <blockquote class="testimonial">
-          <p>"We booked the Cocktail Bar cabin for our team offsites in Shibuya. Clients fly in and can't believe we work inside a vintage JR carriage. It's a conversation starter."</p>
+          <p data-i18n="test_3">"We booked the Cocktail Bar cabin for our team offsites in Shibuya. Clients fly in and can't believe we work inside a vintage JR carriage. It's a conversation starter."</p>
           <footer>
-            <strong>Kenji A.</strong>
-            <span>Creative Director, Tokyo</span>
+            <strong data-i18n="test_3_name">Kenji A.</strong>
+            <span data-i18n="test_3_role">Creative Director, Tokyo</span>
           </footer>
         </blockquote>
       </div>
@@ -518,51 +523,51 @@
     <div class="container">
       <div class="contact__inner">
         <div class="contact__info">
-          <span class="section__tag">Get Started</span>
-          <h2 class="section__title">Ready to Board?</h2>
-          <p>Whether you want a day pass, a monthly membership, a custom interior, or to discuss a rail partnership — we'd love to hear from you.</p>
+          <span class="section__tag" data-i18n="contact_tag">Get Started</span>
+          <h2 class="section__title" data-i18n="contact_title">Ready to Board?</h2>
+          <p data-i18n="contact_desc">Whether you want a day pass, a monthly membership, a custom interior, or to discuss a rail partnership — we'd love to hear from you.</p>
           <div class="contact__details">
             <div class="contact__detail">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span>hello@hotdeskrail.com</span>
+              <span data-i18n="contact_email">hello@hotdeskrail.com</span>
             </div>
             <div class="contact__detail">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <span>+1 (800) RAIL-DESK</span>
+              <span data-i18n="contact_phone">+1 (800) RAIL-DESK</span>
             </div>
             <div class="contact__detail">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>HQ: Amsterdam Centraal, Platform West</span>
+              <span data-i18n="contact_hq">HQ: Amsterdam Centraal, Platform West</span>
             </div>
           </div>
         </div>
         <form class="contact__form" id="contactForm">
           <div class="form__group">
-            <label for="name">Full Name</label>
+            <label for="name" data-i18n="form_name">Full Name</label>
             <input type="text" id="name" name="name" required placeholder="Jane Smith">
           </div>
           <div class="form__group">
-            <label for="email">Email</label>
+            <label for="email" data-i18n="form_email">Email</label>
             <input type="email" id="email" name="email" required placeholder="jane@company.com">
           </div>
           <div class="form__group">
-            <label for="interest">I'm interested in…</label>
+            <label for="interest" data-i18n="form_interest">I'm interested in…</label>
             <select id="interest" name="interest" required>
-              <option value="" disabled selected>Select an option</option>
-              <option value="day-pass">Day Pass</option>
-              <option value="explorer">Explorer Membership</option>
-              <option value="first-class">First Class Membership</option>
-              <option value="custom-interior">Custom Interior Theme</option>
-              <option value="partnership">Rail Partnership</option>
-              <option value="corporate">Corporate Booking</option>
-              <option value="other">Something Else</option>
+              <option value="" disabled selected data-i18n="form_select">Select an option</option>
+              <option value="day-pass" data-i18n="form_opt_day">Day Pass</option>
+              <option value="explorer" data-i18n="form_opt_exp">Explorer Membership</option>
+              <option value="first-class" data-i18n="form_opt_fc">First Class Membership</option>
+              <option value="custom-interior" data-i18n="form_opt_custom">Custom Interior Theme</option>
+              <option value="partnership" data-i18n="form_opt_partner">Rail Partnership</option>
+              <option value="corporate" data-i18n="form_opt_corp">Corporate Booking</option>
+              <option value="other" data-i18n="form_opt_other">Something Else</option>
             </select>
           </div>
           <div class="form__group">
-            <label for="message">Message</label>
+            <label for="message" data-i18n="form_message">Message</label>
             <textarea id="message" name="message" rows="4" placeholder="Tell us about your needs…"></textarea>
           </div>
-          <button type="submit" class="btn btn--primary btn--block">Send Message</button>
+          <button type="submit" class="btn btn--primary btn--block" data-i18n="form_submit">Send Message</button>
         </form>
       </div>
     </div>
@@ -576,39 +581,39 @@
           <a href="#" class="nav__logo">
             <span>HotDesk<strong>Rail</strong></span>
           </a>
-          <p>Decommissioned cabins, reimagined as workspaces — worldwide.</p>
+          <p data-i18n="footer_brand">Decommissioned cabins, reimagined as workspaces — worldwide.</p>
         </div>
         <div class="footer__links">
           <div class="footer__col">
-            <h4>Product</h4>
+            <h4 data-i18n="footer_product">Product</h4>
             <ul>
-              <li><a href="#interiors">Interiors</a></li>
-              <li><a href="#features">Features</a></li>
-              <li><a href="#pricing">Pricing</a></li>
-              <li><a href="#locations">Locations</a></li>
+              <li><a href="#interiors" data-i18n="nav_interiors">Interiors</a></li>
+              <li><a href="#features" data-i18n="nav_features">Features</a></li>
+              <li><a href="#pricing" data-i18n="nav_pricing">Pricing</a></li>
+              <li><a href="#locations" data-i18n="nav_locations">Locations</a></li>
             </ul>
           </div>
           <div class="footer__col">
-            <h4>Company</h4>
+            <h4 data-i18n="footer_company">Company</h4>
             <ul>
-              <li><a href="#about">About</a></li>
-              <li><a href="#partners">Partners</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Press</a></li>
+              <li><a href="#about" data-i18n="nav_about">About</a></li>
+              <li><a href="#partners" data-i18n="part_cta_btn">Partners</a></li>
+              <li><a href="#" data-i18n="footer_careers">Careers</a></li>
+              <li><a href="#" data-i18n="footer_press">Press</a></li>
             </ul>
           </div>
           <div class="footer__col">
-            <h4>Legal</h4>
+            <h4 data-i18n="footer_legal">Legal</h4>
             <ul>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#" data-i18n="footer_privacy">Privacy Policy</a></li>
+              <li><a href="#" data-i18n="footer_terms">Terms of Service</a></li>
+              <li><a href="#" data-i18n="footer_cookies">Cookie Policy</a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2026 HotDesk Rail Ltd. All rights reserved.</p>
+        <p data-i18n="footer_copy">&copy; 2026 HotDesk Rail Ltd. All rights reserved.</p>
         <div class="footer__social">
           <a href="#" aria-label="Twitter">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -624,6 +629,7 @@
     </div>
   </footer>
 
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
