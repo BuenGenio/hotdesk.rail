@@ -196,9 +196,11 @@
       const t = (key) => {
         if (typeof I18N !== 'undefined' && I18N[currentLang] && key in I18N[currentLang])
           return I18N[currentLang][key];
-        if (typeof MA_DATA !== 'undefined' && MA_DATA[currentCountry] && key in MA_DATA[currentCountry])
-          return MA_DATA[currentCountry][key];
-        return I18N?.en?.[key] || MA_DATA?.[currentCountry]?.[key] || key;
+        const countryData = typeof MA_DATA !== 'undefined' && MA_DATA[currentCountry];
+        const langData = countryData && (countryData[currentLang] || countryData.en);
+        if (langData && key in langData)
+          return langData[key];
+        return I18N?.en?.[key] || (countryData?.en && countryData.en[key]) || key;
       };
 
       const setURL = () => {

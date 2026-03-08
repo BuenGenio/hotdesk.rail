@@ -1,9 +1,10 @@
 /**
  * Market analysis data by source country (UK, Ukraine, Spain).
- * Language-independent; combine with I18N for labels.
+ * Each country has en/uk/es variants; combine with I18N for structural labels.
  */
 const MA_DATA = {
   uk: {
+    en: {
     ma_s1_region: 'UK Market',
     ma_s1_r1_src: 'eBay / Private Listings',
     ma_s1_r1_type: 'Unrestored carriages',
@@ -57,9 +58,13 @@ const MA_DATA = {
     ma_s7_r5_f: 'ROI', ma_s7_r5_a: '4–5 year payback feasible at 75–80% occupancy',
     ma_s7_rec: 'Pilot with 1–2 carriages (Mark 1 or 2) at a single site. Target £80–100k all-in per cabin, premium pricing (£800+/desk), and a partner with land. Validate demand before scaling.',
     ma_sources: 'Sources: Rail Magazine, Heritage Railway, Ty Green, Spacestor, Workspace Group, CoworkingCafe, Allelys. Figures are indicative.',
+    },
+    uk: {},
+    es: {},
   },
 
   ua: {
+    en: {
     ma_s1_region: 'Ukraine Market',
     ma_s1_r1_src: 'OLX / Private Listings',
     ma_s1_r1_type: 'Unrestored Soviet-era carriages',
@@ -113,9 +118,67 @@ const MA_DATA = {
     ma_s7_r5_f: 'ROI', ma_s7_r5_a: '4–6 year payback feasible at 70–80% occupancy',
     ma_s7_rec: 'Pilot with 1–2 carriages in Lviv or Kyiv. Target ₴1.5–3M all-in per cabin, premium pricing. Validate demand in safer regions before scaling.',
     ma_sources: 'Sources: Ukrzaliznytsia, Railway Museum Kyiv, local hauliers, coworking operators. Figures are indicative.',
+    },
+    uk: {
+      ma_s1_region: 'Ринок України',
+      ma_s1_r1_src: 'OLX / Приватні оголошення',
+      ma_s1_r1_type: 'Невідновлені радянські вагони',
+      ma_s1_r1_price: '₴50,000 – ₴150,000',
+      ma_s1_r1_notes: 'Часто 61-417, 61-444; стан різний',
+      ma_s1_r2_src: 'Переобладнані / Частково відновлені',
+      ma_s1_r2_type: 'Оренда для відпочинку / кафе',
+      ma_s1_r2_price: '₴800,000 – ₴1.2M',
+      ma_s1_r2_notes: 'Приклади з Карпатського регіону',
+      ma_s1_r3_src: 'Укрзалізниця та музеї',
+      ma_s1_r3_type: '61-417, 61-444, вагони купе',
+      ma_s1_r3_price: '₴200,000 – ₴600,000+',
+      ma_s1_r3_notes: 'Надлишок УЗ; Залізничний музей Києва',
+      ma_s1_r4_src: 'Заміна флоту УЗ',
+      ma_s1_r4_type: 'Старі міжміські вагони',
+      ma_s1_r4_price: 'На металобрухт / переговори',
+      ma_s1_r4_notes: 'Доступні під час модернізації флоту',
+      ma_s1_f1: '61-417 / 61-444 — виведення з регіональних маршрутів',
+      ma_s1_f2: 'Вагони купе — надлишок на деяких лініях',
+      ma_s1_f3: 'Старі електропоїзди — заміна на Hyundai Rotem',
+      ma_s1_f4: 'Спальні вагони — частина списана; музеї зацікавлені',
+      ma_s1_d1_type: '61-417', ma_s1_d1_len: '24 м', ma_s1_d1_wt: '~40 тонн', ma_s1_d1_best: 'Офіс на 4–6 осіб',
+      ma_s1_d2_type: '61-444', ma_s1_d2_len: '24 м', ma_s1_d2_wt: '~42 тонни', ma_s1_d2_best: 'Офіс на 4–8 осіб',
+      ma_s1_d3_type: 'Купе', ma_s1_d3_len: '24 м', ma_s1_d3_wt: '~45 тонн', ma_s1_d3_best: 'Офіс на 6–10 осіб',
+      ma_s1_concl: 'Пропозиція є через надлишок УЗ та приватних продавців. Радянський склад найдоступніший; модернізація створює періодичну доступність. Війна та попит на металобрухт впливають на ціни.',
+      ma_s2_trans_p: 'Важкі перевізники (ТОВ Транспорт, місцеві). Методи: низькорамний причіп, кран. Стан доріг та дозволи різняться за регіонами.',
+      ma_s2_r1_d: '50 км', ma_s2_r1_c: '₴80,000–₴150,000',
+      ma_s2_r2_d: '200 км', ma_s2_r2_c: '₴200,000–₴350,000',
+      ma_s2_r3_d: '500+ км', ma_s2_r3_c: '₴400,000–₴700,000+',
+      ma_s2_req: 'Дозволи на негабарит, обстеження маршруту (містки), доступ до майданчика. КПП можуть потребувати узгодження.',
+      ma_s2_siting_p: 'Міські ділянки — угода з власником, планування. Колійні тупики можливі за згодою УЗ. Електрика та комунікації різняться.',
+      ma_s3_p1: '~USD 0.3B (2024), зростання після війни. Драйвери: відбудова, віддалена робота, попит на гнучкі простори в безпечніших регіонах.',
+      ma_s3_p2: 'Київ/Львів гнучкий офіс: €8–15/м²; преміум €20+/м².',
+      ma_s3_r1_p: 'Місцеві поди', ma_s3_r1_pr: '₴150,000–₴400,000 + ПДВ', ma_s3_r1_c: '2–4 особи',
+      ma_s3_r2_p: 'Hot desk підписка', ma_s3_r2_pr: '₴3,000–₴12,000/міс', ma_s3_r2_c: '1',
+      ma_s3_r3_p: 'Приватний офіс', ma_s3_r3_pr: '₴8,000–₴25,000/стіл/міс', ma_s3_r3_c: '2–10',
+      ma_s3_pos: 'Справжні вагони, радянський характер, більший простір. Ціль: МСП, НГО, віддалені команди, коворкінги у Львові, Києві, Одесі.',
+      ma_s4_r1_proc: '₴200,000', ma_s4_r1_trans: '₴150,000', ma_s4_r1_conv: '₴1.2M', ma_s4_r1_tot: '₴1.55M',
+      ma_s4_r2_proc: '₴500,000', ma_s4_r2_trans: '₴300,000', ma_s4_r2_conv: '₴2.5M', ma_s4_r2_tot: '₴3.3M',
+      ma_s4_r3_proc: '₴1M', ma_s4_r3_trans: '₴500,000', ma_s4_r3_conv: '₴4M', ma_s4_r3_tot: '₴5.5M',
+      ma_s5_p1: 'Кабіна на 4 особи: ₴40,000–₴80,000/міс при ₴10,000–₴20,000/стіл. Окупність: ~4–6 років при 70–80% завантаженні. Преміум-ціни в Києві/Львові покращують життєздатність.',
+      ma_s5_p2: 'Портфель 3–5 кабін покращує маржу. B2B та оренди для НГО покращують unit economics.',
+      ma_s6_r1_r: 'Волатильність пропозиції', ma_s6_r1_m: 'Залучати УЗ під час заміни флоту; розглянути приватних продавців',
+      ma_s6_r2_r: 'Транспорт та стан доріг', ma_s6_r2_m: 'Майданчик ближче до джерела; враховувати обмеження мостів',
+      ma_s6_r3_r: 'Планування та дозволи', ma_s6_r3_m: 'Рання взаємодія з місцевою владою',
+      ma_s6_r4_r: 'Доступ до землі', ma_s6_r4_m: 'Партнерство зі станціями, бізнес-парками, муніципалітетами',
+      ma_s7_r1_f: 'Наявність', ma_s7_r1_a: 'Помірна — радянський склад доступний; надлишок УЗ періодичний',
+      ma_s7_r2_f: 'Логістика', ma_s7_r2_a: 'Керована — є перевізники; стан доріг різний',
+      ma_s7_r3_f: 'Попит', ma_s7_r3_a: 'Зростає — відбудова, віддалена робота, гнучкий простір',
+      ma_s7_r4_f: 'CapEx на кабіну', ma_s7_r4_a: '₴1.5M–₴5.5M залежно від специфікації',
+      ma_s7_r5_f: 'ROI', ma_s7_r5_a: 'Окупність 4–6 років при 70–80% завантаженні',
+      ma_s7_rec: 'Пілот з 1–2 вагонами у Львові або Києві. Ціль ₴1.5–3M загалом на кабіну, преміум-ціни. Перевірити попит у безпечніших регіонах перед масштабуванням.',
+      ma_sources: 'Джерела: Укрзалізниця, Залізничний музей Києва, місцеві перевізники, оператори коворкінгів. Цифри орієнтовні.',
+    },
+    es: {},
   },
 
   es: {
+    en: {
     ma_s1_region: 'Spain Market',
     ma_s1_r1_src: 'Milanuncios / Auctions',
     ma_s1_r1_type: 'Unrestored carriages',
@@ -169,5 +232,8 @@ const MA_DATA = {
     ma_s7_r5_f: 'ROI', ma_s7_r5_a: '4–5 year payback feasible at 75–80% occupancy',
     ma_s7_rec: 'Pilot with 1–2 carriages in Madrid or Barcelona. Target €80–120k all-in per cabin, premium pricing. Validate demand before scaling.',
     ma_sources: 'Sources: Renfe, FEVE, Grupo Sesé, Madrid/Barcelona coworking. Figures are indicative.',
+    },
+    uk: {},
+    es: {},
   },
 };
